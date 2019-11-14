@@ -1,19 +1,36 @@
 import axios from "axios";
-//import { axiosWithAuth } from '../utilities/axiosWithAuth'
 import * as type from "./actionTypes.js";
+import { axiosWithAuth } from "../utilities/axiosWithAuth.js";
 
 export const postRegister = info => {
   return dispatch => {
     dispatch({ type: type.REG_REQUEST });
-    axios
-      .post("http://localhost:6123/api/auth/register", info)
+    axiosWithAuth()
+      .post("/api/auth/register", info)
       .then(res => {
-        console.log("REG MESSAGE:", res.data);
+        console.log("REG MESSAGE:", res);
         dispatch({ type: type.REG_SUCCESS, payload: res.data });
       })
       .catch(error => {
         console.log(error);
         dispatch({ type: type.REG_FAILURE, payload: error.response });
+      });
+  };
+};
+
+export const postLogin = info => {
+  return dispatch => {
+    dispatch({ type: type.LOG_REQUEST });
+    axiosWithAuth()
+      .post("/api/auth/login", info)
+      .then(res => {
+        console.log("LOG MESSAGE:", res);
+        localStorage.setItem("token", res.data.token);
+        dispatch({ type: type.LOG_SUCCESS, payload: res.data });
+      })
+      .catch(error => {
+        console.log(error);
+        dispatch({ type: type.LOG_FAILURE, payload: error.response });
       });
   };
 };

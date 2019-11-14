@@ -2,3 +2,7 @@
 export const REG_REQUEST = "REG_REQUEST";
 export const REG_SUCCESS = "REG_SUCCESS";
 export const REG_FAILURE = "REG_FAILURE";
+//LOGIN ACTIONS
+export const LOG_REQUEST = "LOG_REQUEST";
+export const LOG_SUCCESS = "LOG_SUCCESS";
+export const LOG_FAILURE = "LOG_FAILURE";

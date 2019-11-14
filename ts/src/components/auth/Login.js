@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { postRegister } from "../../actions/index.js";
+import { postLogin } from "../../actions/index.js";
 
-function Register(props) {
+function Login(props) {
   //USER INFO LOCAL STATE
   const [info, setInfo] = useState({
-    name: "",
     email: "",
     password: ""
   });
@@ -24,23 +23,13 @@ function Register(props) {
     //NO AUTO-REFRESH
     e.preventDefault();
     //SEND USER INFO TO POST REGISTER FUNCTION IN ACTIONS
-    props.postRegister(info);
+    props.postLogin(info);
   }
 
   return (
     <div className="regForm">
       <form onSubmit={handleSubmit}>
         <ul>
-          <li>
-            <label>Name</label>
-            <input
-              type="text"
-              name="name"
-              value={info.name}
-              placeholder="enter name"
-              onChange={handleChange}
-            />
-          </li>
           <li>
             <label>Email</label>
             <input
@@ -61,7 +50,7 @@ function Register(props) {
               onChange={handleChange}
             />
           </li>
-          <button>Create</button>
+          <button>Enter</button>
         </ul>
       </form>
     </div>
@@ -77,6 +66,6 @@ const mapStateToProps = state => {
 export default connect(
   mapStateToProps,
   {
-    postRegister
+    postLogin
   }
-)(Register);
+)(Login);

@@ -1,0 +1,100 @@
+//SCSS VARIABLES
+@import "src/utilities/variables";
+// PERMANENT MARKER IMPORT
+@import url("https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto&display=swap");
+// Noto Sans TC (HELLO my name is) IMPORT
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC:900&display=swap");
+
+.LandingContainer {
+  .Header {
+    :hover {
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      transform: scale(1.1);
+    }
+    border-bottom: 1px groove black;
+    h1 {
+      font-size: 8rem;
+      font-family: "Roboto", sans-serif;
+      font-family: "Permanent Marker", cursive;
+      @media (max-width: $tablet) {
+        font-size: 4rem;
+      }
+    }
+  }
+  .SectionDiv {
+    margin-top: 100px;
+    height: 50vh;
+    display: flex;
+    justify-content: space-around;
+    @media (max-width: $tablet) {
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .Login {
+      :hover {
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        transform: scale(1.1);
+      }
+      box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+      background: #dbf4fc;
+      border-radius: 20px;
+      width: 40%;
+      font-family: "Noto Sans TC", sans-serif;
+      @media (max-width: $tablet) {
+        width: 80%;
+        height: 500px;
+        margin-bottom: 50px;
+      }
+      h2 {
+        font-size: 1rem;
+        border-bottom: 1px groove black;
+      }
+      h1 {
+        font-size: 4rem;
+        // margin-top: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        height: 90%;
+        @media (max-width: $tablet) {
+          font-size: 3rem;
+        }
+      }
+    }
+    .Register {
+      :hover {
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        transform: scale(1.1);
+      }
+      box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+      background: #fcdee6;
+      border-radius: 20px;
+      width: 40%;
+      font-family: "Noto Sans TC", sans-serif;
+      @media (max-width: $tablet) {
+        width: 80%;
+        height: 500px;
+      }
+      h2 {
+        font-size: 1rem;
+        border-bottom: 1px groove black;
+      }
+      h1 {
+        font-size: 4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        height: 90%;
+        @media (max-width: $tablet) {
+          font-size: 3rem;
+        }
+      }
+    }
+  }
+}
