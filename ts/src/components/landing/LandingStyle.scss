@@ -26,7 +26,7 @@
         transform: scale(1.1);
       }
       box-shadow: $shadow;
-      background: $c1;
+      border: 3px solid $c1;
       border-radius: 20px;
       width: 40%;
       max-height: 400px;
@@ -37,16 +37,16 @@
       }
       h2 {
         font-size: 1rem;
-        border-bottom: 1px groove black;
+        border-bottom: 3px solid $c1;
       }
       h1 {
-        font-size: 4rem;
+        font-size: 8rem;
         display: flex;
         justify-content: center;
         align-items: center;
         height: 65%;
         @media (max-width: $tablet) {
-          font-size: 3rem;
+          font-size: 5rem;
         }
       }
     }
@@ -57,7 +57,7 @@
         transform: scale(1.1);
       }
       box-shadow: $shadow;
-      background: $c2;
+      border: 3px solid $c2;
       border-radius: 20px;
       width: 40%;
       max-height: 400px;
@@ -68,16 +68,16 @@
       }
       h2 {
         font-size: 1rem;
-        border-bottom: 1px groove black;
+        border-bottom: 3px solid $c2;
       }
       h1 {
-        font-size: 4rem;
+        font-size: 8rem;
         display: flex;
         justify-content: center;
         align-items: center;
         height: 65%;
         @media (max-width: $tablet) {
-          font-size: 3rem;
+          font-size: 5rem;
         }
       }
     }

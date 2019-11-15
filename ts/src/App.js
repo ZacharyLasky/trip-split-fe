@@ -13,7 +13,6 @@ import "./App.css";
 export default function App() {
   return (
     <div className="App">
-      <Header />
       <switch>
         <BrowserRouter>
           {/* <NavLink exact to="/"></NavLink>

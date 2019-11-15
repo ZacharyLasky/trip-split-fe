@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { postRegister } from "../../actions/index.js";
+import RegisterHeader from "../../components/header/RegisterHeader.js";
 
 //STYLE IMPORTS
 import RegisterStyle from "./RegisterStyle.scss";
@@ -31,38 +32,53 @@ function Register(props) {
   }
 
   return (
-    <div className="regForm">
-      <form onSubmit={handleSubmit}>
-        <div className="hello">
-          <h1>HELLO</h1>
-          <h2>my name is</h2>
-          <input
-            type="text"
-            name="name"
-            value={info.name}
-            placeholder="enter name"
-            onChange={handleChange}
-          />
-        </div>
-        <h1>Email</h1>
-        <input
-          type="email"
-          name="email"
-          value={info.email}
-          placeholder="enter email"
-          onChange={handleChange}
-        />
-        <h1>Password</h1>
-        <input
-          type="password"
-          name="password"
-          value={info.password}
-          placeholder="choose password"
-          onChange={handleChange}
-        />
-        <button>Create</button>
-      </form>
-    </div>
+    <>
+      <RegisterHeader />
+      <div className="regForm">
+        <form onSubmit={handleSubmit}>
+          <div className="hello1">
+            <h1>HELLO</h1>
+            <h2>my name is</h2>
+          </div>
+          <div className="inp1">
+            <input
+              type="text"
+              name="name"
+              value={info.name}
+              placeholder="enter name"
+              onChange={handleChange}
+            />
+          </div>
+          <div className="hello2">
+            <h1>HELLO</h1>
+            <h2>my email is</h2>
+          </div>
+          <div className="inp2">
+            <input
+              type="email"
+              name="email"
+              value={info.email}
+              placeholder="enter email"
+              onChange={handleChange}
+            />
+          </div>
+          <div className="hello3">
+            <h1>HELLO</h1>
+            <h2>my password is</h2>
+          </div>
+          <div className="inp3">
+            <input
+              type="password"
+              name="password"
+              value={info.password}
+              placeholder="choose password"
+              onChange={handleChange}
+            />
+          </div>
+          <button>CREATE</button>
+        </form>
+      </div>
+    </>
   );
 }
 
