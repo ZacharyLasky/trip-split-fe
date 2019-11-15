@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import { createStore, applyMiddleware, compose } from "redux";
+import "semantic-ui-css/semantic.min.css";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 import { rootReducer } from "./reducers";

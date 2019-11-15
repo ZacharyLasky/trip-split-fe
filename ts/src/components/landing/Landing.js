@@ -4,9 +4,6 @@ import { NavLink, Route, BrowserRouter } from "react-router-dom";
 import LandingStyle from "./LandingStyle.scss";
 
 function Landing(props) {
-  const toLanding = () => {
-    window.location = window.location;
-  };
   const toLogin = () => {
     props.history.push("/login");
   };
@@ -15,9 +12,6 @@ function Landing(props) {
   };
   return (
     <div className="LandingContainer">
-      <div className="Header">
-        <h1 onClick={toLanding}>TRIP SPLIT</h1>
-      </div>
       <div className="SectionDiv">
         <div className="Login" onClick={toLogin}>
           <h2>Returning User</h2>

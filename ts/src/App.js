@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink, Route, BrowserRouter } from "react-router-dom";
 // COMPONENT IMPORTS
 import PrivateRoute from "./components/PrivateRoute.js";
+import Header from "./components/header/Header.js";
 import Landing from "./components/landing/Landing.js";
 import Register from "./components/auth/Register.js";
 import Login from "./components/auth/Login.js";
@@ -12,6 +13,7 @@ import "./App.css";
 export default function App() {
   return (
     <div className="App">
+      <Header />
       <switch>
         <BrowserRouter>
           {/* <NavLink exact to="/"></NavLink>

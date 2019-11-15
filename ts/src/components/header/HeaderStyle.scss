@@ -1,0 +1,28 @@
+//SCSS VARIABLES
+@import "src/utilities/variables";
+// PERMANENT MARKER IMPORT
+@import url("https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto&display=swap");
+// Noto Sans TC (HELLO my name is) IMPORT
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC:900&display=swap");
+
+.Header {
+  .HeaderDiv {
+    :hover {
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      transform: scale(1.1);
+    }
+    border-bottom: 3px groove grey;
+    h1 {
+      font-size: 8rem;
+      font-family: "Roboto", sans-serif;
+      font-family: "Permanent Marker", cursive;
+      @media (max-width: $tablet) {
+        font-size: 4rem;
+      }
+      @media (max-width: $mobile) {
+        font-size: 3.5rem;
+      }
+    }
+  }
+}

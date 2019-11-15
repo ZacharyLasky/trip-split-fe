@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import { postRegister } from "../../actions/index.js";
 
+//STYLE IMPORTS
+import RegisterStyle from "./RegisterStyle.scss";
+
 function Register(props) {
   //USER INFO LOCAL STATE
   const [info, setInfo] = useState({
@@ -30,39 +33,34 @@ function Register(props) {
   return (
     <div className="regForm">
       <form onSubmit={handleSubmit}>
-        <ul>
-          <li>
-            <label>Name</label>
-            <input
-              type="text"
-              name="name"
-              value={info.name}
-              placeholder="enter name"
-              onChange={handleChange}
-            />
-          </li>
-          <li>
-            <label>Email</label>
-            <input
-              type="email"
-              name="email"
-              value={info.email}
-              placeholder="enter email"
-              onChange={handleChange}
-            />
-          </li>
-          <li>
-            <label>Password</label>
-            <input
-              type="password"
-              name="password"
-              value={info.password}
-              placeholder="choose password"
-              onChange={handleChange}
-            />
-          </li>
-          <button>Create</button>
-        </ul>
+        <div className="hello">
+          <h1>HELLO</h1>
+          <h2>my name is</h2>
+          <input
+            type="text"
+            name="name"
+            value={info.name}
+            placeholder="enter name"
+            onChange={handleChange}
+          />
+        </div>
+        <h1>Email</h1>
+        <input
+          type="email"
+          name="email"
+          value={info.email}
+          placeholder="enter email"
+          onChange={handleChange}
+        />
+        <h1>Password</h1>
+        <input
+          type="password"
+          name="password"
+          value={info.password}
+          placeholder="choose password"
+          onChange={handleChange}
+        />
+        <button>Create</button>
       </form>
     </div>
   );
@@ -74,9 +72,6 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  {
-    postRegister
-  }
-)(Register);
+export default connect(mapStateToProps, {
+  postRegister
+})(Register);

@@ -1,4 +1,18 @@
-// permanent marker import
+//SCSS VARIABLES
+@import "src/utilities/variables";
+//PERMANENT MARKER IMPORT
 @import url("https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto&display=swap");
 // font-family: 'Roboto', sans-serif;
 // font-family: 'Permanent Marker', cursive;
+
+.regForm {
+  form {
+    .hello {
+      display: flex;
+      flex-direction: column;
+      border: $border;
+      margin-left: 100px;
+      margin-right: 100px;
+    }
+  }
+}
