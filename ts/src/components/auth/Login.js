@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { postLogin } from "../../actions/index.js";
+import LoginHeader from "../../components/header/LoginHeader.js";
+
+//STYLE IMPORTS
+import LoginStyle from "./LoginStyle.scss";
 
 function Login(props) {
   //USER INFO LOCAL STATE
@@ -25,13 +29,16 @@ function Login(props) {
     //SEND USER INFO TO POST REGISTER FUNCTION IN ACTIONS
     props.postLogin(info);
   }
-
   return (
-    <div className="regForm">
-      <form onSubmit={handleSubmit}>
-        <ul>
-          <li>
-            <label>Email</label>
+    <>
+      <LoginHeader />
+      <div className="logForm">
+        <form onSubmit={handleSubmit}>
+          <div className="hello1">
+            <h1>HELLO</h1>
+            <h2>my email is</h2>
+          </div>
+          <div className="inp1">
             <input
               type="email"
               name="email"
@@ -39,9 +46,12 @@ function Login(props) {
               placeholder="enter email"
               onChange={handleChange}
             />
-          </li>
-          <li>
-            <label>Password</label>
+          </div>
+          <div className="hello2">
+            <h1>HELLO</h1>
+            <h2>my email is</h2>
+          </div>
+          <div className="inp2">
             <input
               type="password"
               name="password"
@@ -49,11 +59,11 @@ function Login(props) {
               placeholder="choose password"
               onChange={handleChange}
             />
-          </li>
-          <button>Enter</button>
-        </ul>
-      </form>
-    </div>
+          </div>
+          <button>ENTER</button>
+        </form>
+      </div>
+    </>
   );
 }
 
@@ -63,9 +73,6 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  {
-    postLogin
-  }
-)(Login);
+export default connect(mapStateToProps, {
+  postLogin
+})(Login);

@@ -16,14 +16,22 @@ function Landing(props) {
     <>
       <Header />
       <div className="LandingContainer">
-        <div className="SectionDiv">
-          <div className="Login" onClick={toLogin}>
-            <h2>Returning User</h2>
-            <h1>Log In</h1>
+        <div className="sec-1">
+          <div className="hello1" onClick={toLogin}>
+            <h1>HELLO</h1>
+            <h2>returning user</h2>
           </div>
-          <div className="Register" onClick={toRegister}>
-            <h2>New User</h2>
-            <h1>Sign Up</h1>
+          <div className="login" onClick={toLogin}>
+            <h1>LOG IN</h1>
+          </div>
+        </div>
+        <div className="sec-2">
+          <div className="hello2" onClick={toRegister}>
+            <h1>HELLO</h1>
+            <h2>new user</h2>
+          </div>
+          <div className="register" onClick={toRegister}>
+            <h1>SIGN UP</h1>
           </div>
         </div>
       </div>
