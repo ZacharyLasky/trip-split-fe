@@ -59,7 +59,15 @@ function Register(props) {
               name="email"
               value={info.email}
               placeholder="enter email"
-              onChange={handleChange}
+              onChange={e => {
+                const myVar = e.target.value;
+                const myVarUpper = myVar.toUpperCase();
+                setInfo({
+                  ...info,
+                  email: myVarUpper
+                });
+                console.log(myVarUpper);
+              }}
             />
           </div>
           <div className="hello3">

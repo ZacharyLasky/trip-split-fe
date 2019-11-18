@@ -19,7 +19,6 @@ function Login(props) {
       ...info,
       [e.target.name]: e.target.value
     });
-    console.log(e.target.value);
   }
 
   //HANDLES CLICKING SUBMIT OR PRESSING ENTER KEY
@@ -44,12 +43,20 @@ function Login(props) {
               name="email"
               value={info.email}
               placeholder="enter email"
-              onChange={handleChange}
+              onChange={e => {
+                const myVar = e.target.value;
+                const myVarUpper = myVar.toUpperCase();
+                setInfo({
+                  ...info,
+                  email: myVarUpper
+                });
+                console.log(myVarUpper);
+              }}
             />
           </div>
           <div className="hello2">
             <h1>HELLO</h1>
-            <h2>my email is</h2>
+            <h2>my password is</h2>
           </div>
           <div className="inp2">
             <input
