@@ -5,6 +5,7 @@ import DashHeader from "../../components/header/DashHeader.js";
 import DashboardStyle from "./DashboardStyle.scss";
 
 export default function Dashboard() {
+  const name = localStorage.getItem("name");
   return (
     <>
       <DashHeader />
@@ -12,7 +13,7 @@ export default function Dashboard() {
         <div className="dash">
           <div className="hello">
             <h1>HELLO</h1>
-            <h2>name</h2>
+            <h2>{name}</h2>
           </div>
           <div className="trips">
             <button>NEW TRIP</button>

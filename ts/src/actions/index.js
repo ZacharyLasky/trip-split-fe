@@ -10,6 +10,7 @@ export const postRegister = info => {
       .then(res => {
         console.log("REG MESSAGE:", res);
         localStorage.setItem("token", res.data.token);
+        localStorage.setItem("name", res.data.user.name);
         dispatch({ type: type.REG_SUCCESS, payload: res.data });
       })
       .catch(error => {
@@ -27,6 +28,7 @@ export const postLogin = info => {
       .then(res => {
         console.log("LOG MESSAGE:", res);
         localStorage.setItem("token", res.data.token);
+        localStorage.setItem("name", res.data.name);
         dispatch({ type: type.LOG_SUCCESS, payload: res.data });
       })
       .catch(error => {
