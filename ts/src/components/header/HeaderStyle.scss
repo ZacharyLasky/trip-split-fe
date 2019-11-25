@@ -17,6 +17,9 @@
       font-size: 8rem;
       font-family: "Roboto", sans-serif;
       font-family: "Permanent Marker", cursive;
+      @media (max-width: $tablet) {
+        font-size: 6rem;
+      }
       @media (max-width: $mobile) {
         font-size: 3.5rem;
       }

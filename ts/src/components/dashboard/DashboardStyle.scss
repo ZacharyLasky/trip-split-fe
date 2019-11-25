@@ -1,0 +1,67 @@
+//SCSS VARIABLES
+@import "src/utilities/variables";
+//PERMANENT MARKER IMPORT
+@import url("https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto&display=swap");
+
+.dash-container {
+  // width: 450px;
+  display: flex;
+  justify-content: center;
+  .dash {
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    // @media (max-width: $mobile) {
+    //   width: 90%;
+    // }
+    @media (max-width: $mobile) {
+      width: 90%;
+    }
+    .hello {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1px solid $c1;
+      background: $c1;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      width: 100%;
+      h1 {
+        font-size: 4rem;
+      }
+      h2 {
+        margin-top: -20px;
+      }
+    }
+    .trips {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      border: 3px solid $c1;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      height: 18vh;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    button {
+      background: white;
+      border: 0.5px solid grey;
+      border-radius: 20px;
+      // height: 60px;
+      font-size: 3rem;
+      font-family: "Roboto", sans-serif;
+      font-family: "Permanent Marker", cursive;
+      @media (max-width: $xsmobile) {
+        font-size: 2.2rem;
+      }
+    }
+    button:hover {
+      cursor: pointer;
+      background: $butBack;
+    }
+  }
+}
