@@ -9,6 +9,7 @@ export const postRegister = info => {
       .post("/api/auth/register", info)
       .then(res => {
         console.log("REG MESSAGE:", res);
+        localStorage.setItem("token", res.data.token);
         dispatch({ type: type.REG_SUCCESS, payload: res.data });
       })
       .catch(error => {

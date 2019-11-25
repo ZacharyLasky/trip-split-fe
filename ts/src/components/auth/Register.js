@@ -60,13 +60,13 @@ function Register(props) {
               value={info.email}
               placeholder="enter email"
               onChange={e => {
-                const myVar = e.target.value;
-                const myVarUpper = myVar.toUpperCase();
+                const emVal = e.target.value;
+                const up = emVal.toUpperCase();
                 setInfo({
                   ...info,
-                  email: myVarUpper
+                  email: up
                 });
-                console.log(myVarUpper);
+                console.log(up);
               }}
             />
           </div>
