@@ -16,8 +16,12 @@ export default function Dashboard() {
             <h2>{name}</h2>
           </div>
           <div className="trips">
-            <button>NEW TRIP</button>
-            <button>ALL TRIPS</button>
+            <div className="new">
+              <button>NEW TRIP</button>
+            </div>
+            <div className="all">
+              <button>ALL TRIPS</button>
+            </div>
           </div>
         </div>
       </div>

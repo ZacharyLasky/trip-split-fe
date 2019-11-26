@@ -37,9 +37,7 @@
     }
     .trips {
       display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
+      // align-items: flex-end;
       border: 3px solid $c1;
       border-bottom-left-radius: 20px;
       border-bottom-right-radius: 20px;
@@ -47,21 +45,49 @@
       width: 100%;
       margin-bottom: 10px;
     }
-    button {
-      background: white;
-      border: 0.5px solid grey;
-      border-radius: 20px;
-      // height: 60px;
-      font-size: 3rem;
-      font-family: "Roboto", sans-serif;
-      font-family: "Permanent Marker", cursive;
-      @media (max-width: $xsmobile) {
-        font-size: 2.2rem;
+    .new {
+      display: flex;
+      align-items: flex-start;
+      button {
+        background: white;
+        border: 0.5px solid grey;
+        border-radius: 0px;
+        border-bottom-left-radius: 20px;
+        // height: 60px;
+        font-size: 3rem;
+        font-family: "Roboto", sans-serif;
+        font-family: "Permanent Marker", cursive;
+        @media (max-width: $xsmobile) {
+          font-size: 2.2rem;
+        }
+      }
+      button:hover {
+        cursor: pointer;
+        background: $butBack;
       }
     }
-    button:hover {
-      cursor: pointer;
-      background: $butBack;
+    .all {
+      display: flex;
+      align-items: flex-end;
+      button {
+        background: white;
+        border: 0.5px solid grey;
+        border-radius: 20px;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+        border-top-right-radius: 0px;
+        // height: 60px;
+        font-size: 3rem;
+        font-family: "Roboto", sans-serif;
+        font-family: "Permanent Marker", cursive;
+        @media (max-width: $xsmobile) {
+          font-size: 2.2rem;
+        }
+      }
+      button:hover {
+        cursor: pointer;
+        background: $butBack;
+      }
     }
   }
 }
