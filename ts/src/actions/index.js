@@ -39,3 +39,17 @@ export const postLogin = (info, props) => {
       });
   };
 };
+
+export const postTrip = (info, props) => {
+  return dispatch => {
+    dispatch({ type: type.CREATE_TRIP_REQUEST });
+    axiosWithAuth()
+      .post("/api/trip", info)
+      .then(res => {
+        dispatch({ type: type.CREATE_TRIP_SUCCESS, payload: res.data });
+      })
+      .catch(error => {
+        dispatch({ type: type.CREATE_TRIP_FAILURE, payload: error.response });
+      });
+  };
+};
