@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import { postLogin } from "../../actions/index.js";
 import LoginHeader from "../../components/header/LoginHeader.js";
+import { withRouter } from "react-router";
 
 //STYLE IMPORTS
 import LoginStyle from "./LoginStyle.scss";
@@ -26,7 +27,7 @@ function Login(props) {
     //NO AUTO-REFRESH
     e.preventDefault();
     //SEND USER INFO TO POST REGISTER FUNCTION IN ACTIONS
-    props.postLogin(info);
+    props.postLogin(info, props);
   }
   return (
     <>

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import { postRegister } from "../../actions/index.js";
 import RegisterHeader from "../../components/header/RegisterHeader.js";
+import { withRouter } from "react-router";
 
 //STYLE IMPORTS
 import RegisterStyle from "./RegisterStyle.scss";
@@ -28,7 +29,7 @@ function Register(props) {
     //NO AUTO-REFRESH
     e.preventDefault();
     //SEND USER INFO TO POST REGISTER FUNCTION IN ACTIONS
-    props.postRegister(info);
+    props.postRegister(info, props);
   }
 
   return (

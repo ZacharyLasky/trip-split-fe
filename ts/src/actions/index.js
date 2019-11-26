@@ -2,7 +2,7 @@ import axios from "axios";
 import * as type from "./actionTypes.js";
 import { axiosWithAuth } from "../utilities/axiosWithAuth.js";
 
-export const postRegister = info => {
+export const postRegister = (info, props) => {
   return dispatch => {
     dispatch({ type: type.REG_REQUEST });
     axiosWithAuth()
@@ -12,6 +12,7 @@ export const postRegister = info => {
         localStorage.setItem("token", res.data.token);
         localStorage.setItem("name", res.data.user.name);
         dispatch({ type: type.REG_SUCCESS, payload: res.data });
+        props.history.push("/dashboard");
       })
       .catch(error => {
         console.log(error);
@@ -20,7 +21,7 @@ export const postRegister = info => {
   };
 };
 
-export const postLogin = info => {
+export const postLogin = (info, props) => {
   return dispatch => {
     dispatch({ type: type.LOG_REQUEST });
     axiosWithAuth()
@@ -30,6 +31,7 @@ export const postLogin = info => {
         localStorage.setItem("token", res.data.token);
         localStorage.setItem("name", res.data.name);
         dispatch({ type: type.LOG_SUCCESS, payload: res.data });
+        props.history.push("/dashboard");
       })
       .catch(error => {
         console.log(error);
