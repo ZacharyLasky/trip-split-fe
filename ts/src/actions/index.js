@@ -74,3 +74,17 @@ export const postPerson = (info, props) => {
       });
   };
 };
+
+export const getAllPersons = () => {
+  return dispatch => {
+    dispatch({ type: type.GET_PERSONS_REQUEST });
+    axiosWithAuth()
+      .get("/api/person")
+      .then(res => {
+        dispatch({ type: type.GET_PERSONS_SUCCESS });
+      })
+      .catch(error => {
+        dispatch({ type: type.GET_PERSONS_FAILURE });
+      });
+  };
+};

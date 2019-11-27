@@ -1,13 +1,32 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
-import { postPerson } from "../../actions/index.js";
-import NewTripHeader from "../header/NewTripHeader.js";
+import { postPerson, getAllPersons } from "../../actions/index.js";
+import { withRouter } from "react-router";
+import { axiosWithAuth } from "../../utilities/axiosWithAuth.js";
 
+// COMPONENT IMPORTS
+import NewTripHeader from "../header/NewTripHeader.js";
+import PersonCard from "./PersonCard.js";
 //STYLE IMPORTS
 import PersonStyle from "./PersonStyle.scss";
 
 function Person(props) {
+  const tripId = localStorage.getItem("tripId");
   const person = localStorage.getItem("person");
+
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    axiosWithAuth()
+      .get(`/api/person/trip/${tripId}`)
+      .then(res => {
+        console.log("RES", res.data);
+        setData(res.data);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }, [person]);
 
   //TRIP INFO LOCAL STATE
   const [info, setInfo] = useState({
@@ -60,7 +79,17 @@ function Person(props) {
             <button>ENTER</button>
           </form>
           <div className="name-display">
-            <h1>{person}</h1>
+            {data.map(person => {
+              return (
+                <h1>
+                  <PersonCard person={person} />
+                </h1>
+              );
+            })}
+
+            <button onClick={() => props.history.push("/dashboard")}>
+              DONE ADDING PEOPLE
+            </button>
           </div>
         </div>
       </div>
@@ -75,5 +104,6 @@ const mapStateToProps = state => {
 };
 
 export default connect(mapStateToProps, {
-  postPerson
+  postPerson,
+  getAllPersons
 })(Person);
