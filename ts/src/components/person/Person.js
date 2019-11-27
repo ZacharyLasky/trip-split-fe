@@ -11,11 +11,14 @@ import PersonCard from "./PersonCard.js";
 import PersonStyle from "./PersonStyle.scss";
 
 function Person(props) {
+  //LOCAL STORAGE ITEMS
   const tripId = localStorage.getItem("tripId");
   const person = localStorage.getItem("person");
 
+  //USER DATA LOCAL STATE
   const [data, setData] = useState([]);
 
+  //CALL FOR USERS ON SPECIFIC TRIP
   useEffect(() => {
     axiosWithAuth()
       .get(`/api/person/trip/${tripId}`)
@@ -26,6 +29,7 @@ function Person(props) {
       .catch(error => {
         console.log(error);
       });
+    //UPDATE EACH TIME USER IS ADDED IN LOCAL STORAGE
   }, [person]);
 
   //TRIP INFO LOCAL STATE
