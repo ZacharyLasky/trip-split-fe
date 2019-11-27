@@ -1,6 +1,14 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
+import { postTrip } from "../../actions/index.js";
+import NewTripHeader from "../header/NewTripHeader.js";
+
+//STYLE IMPORTS
+import TripStyle from "./TripStyle.scss";
 
 function Trip(props) {
+  console.log("STATE", props);
+
   //TRIP INFO LOCAL STATE
   const [info, setInfo] = useState({
     title: ""
@@ -19,23 +27,48 @@ function Trip(props) {
   function handleSubmit(e) {
     //NO AUTO-REFRESH
     e.preventDefault();
+    console.log("PROPS", props);
     //SEND TRIP INFO TO CREATE TRIP FUNCTION IN ACTIONS
-    props.postRegister(info, props);
+    const id = localStorage.getItem("id");
+    const args = {
+      ...info,
+      user_id: id
+    };
+    props.postTrip(args, props);
+    props.history.push("/person");
   }
 
   return (
-    <div className="trip-form">
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="trip"
-          value={info.title}
-          placeholder="trip title"
-          onChange={handleChange}
-        />
-      </form>
-    </div>
+    <>
+      <NewTripHeader />
+      <div className="trip-form">
+        <form onSubmit={handleSubmit}>
+          <div className="hello">
+            <h1>HELLO</h1>
+            <h2>where are you going?</h2>
+          </div>
+          <div className="inp">
+            <input
+              type="text"
+              name="title"
+              value={info.title}
+              placeholder="trip title"
+              onChange={handleChange}
+            />
+          </div>
+          <button>ENTER</button>
+        </form>
+      </div>
+    </>
   );
 }
 
-export default Trip;
+const mapStateToProps = state => {
+  return {
+    ...state
+  };
+};
+
+export default connect(mapStateToProps, {
+  postTrip
+})(Trip);

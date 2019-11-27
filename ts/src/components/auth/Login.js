@@ -28,6 +28,7 @@ function Login(props) {
     e.preventDefault();
     //SEND USER INFO TO POST REGISTER FUNCTION IN ACTIONS
     props.postLogin(info, props);
+    // props.postLogin(info, props);
   }
   return (
     <>
