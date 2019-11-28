@@ -17,6 +17,7 @@ function Dashboard(props) {
   //TRIP DATA LOCAL STORAGE
   const [data, setData] = useState([]);
 
+  //GET LAST TRIP OF CURRENT USER
   useEffect(() => {
     axiosWithAuth()
       .get(`/api/trip/last/user/${user}`)
@@ -54,9 +55,9 @@ function Dashboard(props) {
           <img src={arrow} />
           {data.map(trips => {
             return (
-              <h1>
+              <button>
                 <DashboardCard trips={trips} />
-              </h1>
+              </button>
             );
           })}
         </div>

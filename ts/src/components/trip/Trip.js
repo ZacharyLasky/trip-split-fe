@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
+import { withRouter } from "react-router";
 import { postTrip } from "../../actions/index.js";
 import NewTripHeader from "../header/NewTripHeader.js";
 
@@ -35,7 +36,6 @@ function Trip(props) {
       user_id: id
     };
     props.postTrip(args, props);
-    props.history.push("/person");
   }
 
   return (

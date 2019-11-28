@@ -53,6 +53,7 @@ export const postTrip = (info, props) => {
         console.log("TRIP MESSAGE:", res);
         localStorage.setItem("tripId", res.data.id);
         dispatch({ type: type.CREATE_TRIP_SUCCESS, payload: res.data });
+        props.history.push("/person");
       })
       .catch(error => {
         dispatch({ type: type.CREATE_TRIP_FAILURE, payload: error.response });
