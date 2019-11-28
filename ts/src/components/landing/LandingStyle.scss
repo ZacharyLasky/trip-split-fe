@@ -25,6 +25,7 @@
       border-top-left-radius: 20px;
       border-top-right-radius: 20px;
       width: 100%;
+      box-shadow: $shadow;
       h1 {
         font-size: 4rem;
       }
@@ -53,8 +54,7 @@
       border-bottom-left-radius: 20px;
       border-bottom-right-radius: 20px;
       height: 18vh;
-      // width: 100%;
-
+      box-shadow: $shadow;
       font-size: 3rem;
       margin-bottom: 10px;
     }
@@ -73,7 +73,7 @@
       background: $c2;
       border-top-left-radius: 20px;
       border-top-right-radius: 20px;
-      // width: 100%;
+      box-shadow: $shadow;
       h1 {
         font-size: 4rem;
       }
@@ -102,11 +102,11 @@
       border-bottom-left-radius: 20px;
       border-bottom-right-radius: 20px;
       height: 18vh;
-      // width: 100%;
       font-family: "Roboto", sans-serif;
       font-family: "Permanent Marker", cursive;
       font-size: 3rem;
       margin-bottom: 10px;
+      box-shadow: $shadow;
     }
   }
 }

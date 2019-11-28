@@ -21,6 +21,7 @@
       border-top-left-radius: 20px;
       border-top-right-radius: 20px;
       width: 100%;
+      box-shadow: $shadow;
       h1 {
         font-size: 4rem;
       }
@@ -38,6 +39,7 @@
         font-family: "Roboto", sans-serif;
         font-family: "Permanent Marker", cursive;
         font-size: 3rem;
+        box-shadow: $shadow;
         @media (max-width: $xsmobile) {
           font-size: 2.2rem;
         }
@@ -53,6 +55,7 @@
       border-top-left-radius: 20px;
       border-top-right-radius: 20px;
       width: 100%;
+      box-shadow: $shadow;
       h1 {
         font-size: 4rem;
       }
@@ -70,6 +73,7 @@
         font-family: "Roboto", sans-serif;
         font-family: "Permanent Marker", cursive;
         font-size: 3rem;
+        box-shadow: $shadow;
         @media (max-width: $xsmobile) {
           font-size: 2.2rem;
         }
@@ -85,6 +89,7 @@
       border-top-left-radius: 20px;
       border-top-right-radius: 20px;
       width: 100%;
+      box-shadow: $shadow;
       h1 {
         font-size: 4rem;
       }
@@ -102,6 +107,7 @@
         font-family: "Roboto", sans-serif;
         font-family: "Permanent Marker", cursive;
         font-size: 3rem;
+        box-shadow: $shadow;
         @media (max-width: $xsmobile) {
           font-size: 2.2rem;
         }
@@ -109,11 +115,6 @@
       }
     }
     button {
-      :hover {
-        cursor: pointer;
-        transition: all 0.2s ease-in-out;
-        transform: scale(1.1);
-      }
       background: #e0e1e2;
       color: $butfont;
       width: 154px;
@@ -121,6 +122,11 @@
       font-size: 1.1rem;
       border-radius: 3px;
       border: none;
+    }
+    button:hover {
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      transform: scale(1.1);
     }
   }
 }

@@ -21,6 +21,7 @@
       border-top-left-radius: 20px;
       border-top-right-radius: 20px;
       width: 100%;
+      box-shadow: $shadow;
       h1 {
         font-size: 4rem;
       }
@@ -38,6 +39,7 @@
         font-family: "Roboto", sans-serif;
         font-family: "Permanent Marker", cursive;
         font-size: 3rem;
+        box-shadow: $shadow;
         @media (max-width: $xsmobile) {
           font-size: 2.2rem;
         }
@@ -53,6 +55,7 @@
       border-top-left-radius: 20px;
       border-top-right-radius: 20px;
       width: 100%;
+      box-shadow: $shadow;
       h1 {
         font-size: 4rem;
       }
@@ -70,50 +73,14 @@
         font-family: "Roboto", sans-serif;
         font-family: "Permanent Marker", cursive;
         font-size: 3rem;
+        box-shadow: $shadow;
         @media (max-width: $xsmobile) {
           font-size: 2.2rem;
         }
         margin-bottom: 10px;
       }
     }
-    .hello3 {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      border: 1px solid $c3;
-      background: $c3;
-      border-top-left-radius: 20px;
-      border-top-right-radius: 20px;
-      width: 100%;
-      h1 {
-        font-size: 4rem;
-      }
-      h2 {
-        margin-top: -20px;
-      }
-    }
-    .inp3 {
-      input {
-        border: 3px solid $c3;
-        border-bottom-left-radius: 20px;
-        border-bottom-right-radius: 20px;
-        height: 18vh;
-        width: 100%;
-        font-family: "Roboto", sans-serif;
-        font-family: "Permanent Marker", cursive;
-        font-size: 3rem;
-        @media (max-width: $xsmobile) {
-          font-size: 2.2rem;
-        }
-        margin-bottom: 30px;
-      }
-    }
     button {
-      :hover {
-        cursor: pointer;
-        transition: all 0.2s ease-in-out;
-        transform: scale(1.1);
-      }
       background: $butBack;
       color: $butfont;
       width: 154px;
@@ -121,6 +88,11 @@
       font-size: 1.1rem;
       border-radius: 3px;
       border: none;
+    }
+    button:hover {
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      transform: scale(1.1);
     }
   }
 }
