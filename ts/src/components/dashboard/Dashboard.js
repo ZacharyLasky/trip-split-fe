@@ -19,7 +19,7 @@ function Dashboard(props) {
 
   useEffect(() => {
     axiosWithAuth()
-      .get(`/api/trip/user/${user}`)
+      .get(`/api/trip/last/user/${user}`)
       .then(res => {
         console.log(res.data);
         setData(res.data);
