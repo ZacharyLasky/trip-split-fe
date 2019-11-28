@@ -12,10 +12,10 @@ import arrow from "../../assets/dash/arrow.png";
 function Dashboard(props) {
   const name = localStorage.getItem("name");
   const user = localStorage.getItem("id");
+  const tripId = localStorage.getItem("tripId");
 
   //TRIP DATA LOCAL STORAGE
   const [data, setData] = useState([]);
-  console.log("DAT", data);
 
   useEffect(() => {
     axiosWithAuth()
@@ -27,7 +27,7 @@ function Dashboard(props) {
       .catch(error => {
         console.log(error);
       });
-  }, [user]);
+  }, []);
 
   return (
     <>
