@@ -27,6 +27,24 @@ export const tripReducer = (state = initialState, action) => {
         isLoading: false,
         error: true
       };
+    // case type.GET_TRIPS_REQUEST:
+    //   return {
+    //     ...state,
+    //     isLoading: true,
+    //     error: false
+    //   };
+    // case type.GET_TRIPS_SUCCESS:
+    //   return {
+    //     ...state,
+    //     isLoading: false,
+    //     error: false
+    //   };
+    // case type.GET_TRIPS_FAILURE:
+    //   return {
+    //     ...state,
+    //     isLoading: false,
+    //     error: true
+    //   };
     default:
       return state;
   }

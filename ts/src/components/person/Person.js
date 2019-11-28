@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
-import { postPerson, getAllPersons } from "../../actions/index.js";
+import { postPerson } from "../../actions/index.js";
 import { withRouter } from "react-router";
 import { axiosWithAuth } from "../../utilities/axiosWithAuth.js";
 
@@ -18,7 +18,7 @@ function Person(props) {
   //USER DATA LOCAL STATE
   const [data, setData] = useState([]);
 
-  //CALL FOR USERS ON SPECIFIC TRIP
+  //GET USERS ON SPECIFIC TRIP
   useEffect(() => {
     axiosWithAuth()
       .get(`/api/person/trip/${tripId}`)
@@ -59,6 +59,7 @@ function Person(props) {
       trip_id: tripId
     };
     props.postPerson(args, props);
+    setInfo({ name: "" });
   }
 
   return (
@@ -108,6 +109,5 @@ const mapStateToProps = state => {
 };
 
 export default connect(mapStateToProps, {
-  postPerson,
-  getAllPersons
+  postPerson
 })(Person);

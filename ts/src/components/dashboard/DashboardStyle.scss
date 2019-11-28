@@ -4,10 +4,11 @@
 @import url("https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto&display=swap");
 
 .dash-container {
-  // width: 450px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   .dash {
+    width: 450px;
     // display: flex;
     // flex-direction: column;
     // justify-content: center;
@@ -90,6 +91,19 @@
         cursor: pointer;
         background: $c2;
       }
+    }
+  }
+  .cur-trip {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1 {
+      margin-bottom: 3px;
+      margin-top: 3px;
+    }
+    img {
+      width: 30px;
+      height: 30px;
     }
   }
 }
