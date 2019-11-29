@@ -61,20 +61,6 @@ export const postTrip = (info, props) => {
   };
 };
 
-// export const getAllTrips = () => {
-//   return dispatch => {
-//     dispatch({ type: type.GET_TRIPS_REQUEST });
-//     axiosWithAuth()
-//       .get("/api/trips")
-//       .then(res => {
-//         dispatch({ type: type.GET_TRIPS_SUCCESS });
-//       })
-//       .catch(error => {
-//         dispatch({ type: type.GET_TRIPS_FAILURE });
-//       });
-//   };
-// };
-
 export const postPerson = (info, props) => {
   return dispatch => {
     dispatch({ type: type.CREATE_PERSON_REQUEST });
@@ -90,16 +76,20 @@ export const postPerson = (info, props) => {
   };
 };
 
-// export const getAllPersons = () => {
-//   return dispatch => {
-//     dispatch({ type: type.GET_PERSONS_REQUEST });
-//     axiosWithAuth()
-//       .get("/api/person")
-//       .then(res => {
-//         dispatch({ type: type.GET_PERSONS_SUCCESS });
-//       })
-//       .catch(error => {
-//         dispatch({ type: type.GET_PERSONS_FAILURE });
-//       });
-//   };
-// };
+export const postExpense = (info, props) => {
+  return dispatch => {
+    dispatch({ type: type.CREATE_EXPENSE_REQUEST });
+    axiosWithAuth()
+      .post("/api/expense", info)
+      .then(res => {
+        localStorage.setItem("person", res.data.name);
+        dispatch({ type: type.CREATE_EXPENSE_SUCCESS, payload: res.data });
+      })
+      .catch(error => {
+        dispatch({
+          type: type.CREATE_EXPENSE_FAILURE,
+          payload: error.response
+        });
+      });
+  };
+};
