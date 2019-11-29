@@ -6,6 +6,11 @@ import { axiosWithAuth } from "../../utilities/axiosWithAuth.js";
 import TripHeader from "../header/TripHeader.js";
 import DashboardCard from "../dashboard/DashboardCard.js";
 
+//STYLE IMPORTS
+import TripStyle from "./TripStyle.scss";
+//PICTURE IMPORTS
+import arrow from "../../assets/dash/arrow.png";
+
 export default function Trip(props) {
   //TRIP DATA LOCAL STORAGE
   const [data, setData] = useState([]);
@@ -28,13 +33,28 @@ export default function Trip(props) {
     <>
       <TripHeader />
       <div className="trip">
-        {data.map(trips => {
-          return (
-            <h1>
-              <DashboardCard trips={trips} />
-            </h1>
-          );
-        })}
+        <div className="add">
+          {data.map(trips => {
+            return (
+              <h1>
+                <DashboardCard trips={trips} />
+              </h1>
+            );
+          })}
+          <button>ADD EXPENSE</button>
+        </div>
+        <div className="expenses">
+          <h1>EXPENSES</h1>
+          <img src={arrow} />
+        </div>
+        <div className="items">
+          <h1>expense1</h1>
+          <h1>expense1</h1>
+          <h1>expense1</h1>
+          <h1>expense1</h1>
+          <h1>expense1</h1>
+          <h1>expense1</h1>
+        </div>
       </div>
     </>
   );

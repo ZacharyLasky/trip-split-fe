@@ -50,13 +50,11 @@ function Person(props) {
   function handleSubmit(e) {
     //NO AUTO-REFRESH
     e.preventDefault();
-    console.log("PROPS", props);
     //SEND TRIP INFO TO CREATE TRIP FUNCTION IN ACTIONS
-    const tripId = localStorage.getItem("tripId");
-    console.log("TID:", tripId);
+    const tripIdSub = localStorage.getItem("tripId");
     const args = {
       ...info,
-      trip_id: tripId
+      trip_id: tripIdSub
     };
     props.postPerson(args, props);
     setInfo({ name: "" });
