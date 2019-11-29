@@ -10,6 +10,7 @@ import Login from "./components/auth/Login.js";
 import Dashboard from "./components/dashboard/Dashboard.js";
 import NewTrip from "./components/trip/NewTrip.js";
 import Person from "./components/person/Person.js";
+import Trip from "./components/trip/Trip.js";
 // STYLE IMPORTS
 import "./App.css";
 
@@ -33,6 +34,7 @@ function App(props) {
         <PrivateRoute exact path="/dashboard" component={Dashboard} />
         <PrivateRoute path="/newTrip" component={NewTrip} />
         <PrivateRoute path="/person" component={Person} />
+        <PrivateRoute path="/trip" component={Trip} />
       </Switch>
     </div>
   );

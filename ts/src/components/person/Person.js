@@ -12,7 +12,6 @@ import PersonStyle from "./PersonStyle.scss";
 
 function Person(props) {
   //LOCAL STORAGE ITEMS
-  const tripId = localStorage.getItem("tripId");
   const person = localStorage.getItem("person");
 
   //USER DATA LOCAL STATE
@@ -20,7 +19,7 @@ function Person(props) {
 
   //GET USERS ON SPECIFIC TRIP
   useEffect(() => {
-    console.log("23TRIPID:", tripId);
+    const tripId = localStorage.getItem("tripId");
     axiosWithAuth()
       .get(`/api/person/trip/${tripId}`)
       .then(res => {

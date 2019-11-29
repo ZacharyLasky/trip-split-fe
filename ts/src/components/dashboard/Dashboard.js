@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import DashHeader from "../../components/header/DashHeader.js";
-import DashboardCard from "./DashboardCard.js";
 import { withRouter } from "react-router";
 import { axiosWithAuth } from "../../utilities/axiosWithAuth.js";
+
+import DashHeader from "../../components/header/DashHeader.js";
+import DashboardCard from "./DashboardCard.js";
 
 //STYLE IMPORTS
 import DashboardStyle from "./DashboardStyle.scss";
@@ -11,14 +12,13 @@ import arrow from "../../assets/dash/arrow.png";
 
 function Dashboard(props) {
   const name = localStorage.getItem("name");
-  const user = localStorage.getItem("id");
-  const tripId = localStorage.getItem("tripId");
 
   //TRIP DATA LOCAL STORAGE
   const [data, setData] = useState([]);
 
   //GET LAST TRIP OF CURRENT USER
   useEffect(() => {
+    const user = localStorage.getItem("id");
     axiosWithAuth()
       .get(`/api/trip/last/user/${user}`)
       .then(res => {
@@ -55,7 +55,7 @@ function Dashboard(props) {
           <img src={arrow} />
           {data.map(trips => {
             return (
-              <button>
+              <button onClick={() => props.history.push("/trip")}>
                 <DashboardCard trips={trips} />
               </button>
             );
