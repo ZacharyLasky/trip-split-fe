@@ -20,6 +20,7 @@ function Person(props) {
 
   //GET USERS ON SPECIFIC TRIP
   useEffect(() => {
+    console.log("23TRIPID:", tripId);
     axiosWithAuth()
       .get(`/api/person/trip/${tripId}`)
       .then(res => {

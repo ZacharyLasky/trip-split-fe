@@ -5,9 +5,9 @@ import { postTrip } from "../../actions/index.js";
 import NewTripHeader from "../header/NewTripHeader.js";
 
 //STYLE IMPORTS
-import TripStyle from "./TripStyle.scss";
+import NewTripStyle from "./NewTripStyle.scss";
 
-function Trip(props) {
+function NewTrip(props) {
   console.log("STATE", props);
 
   //TRIP INFO LOCAL STATE
@@ -71,4 +71,4 @@ const mapStateToProps = state => {
 
 export default connect(mapStateToProps, {
   postTrip
-})(Trip);
+})(NewTrip);

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { NavLink, Route, BrowserRouter } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import { withRouter } from "react-router";
 // COMPONENT IMPORTS
 import PrivateRoute from "./components/PrivateRoute.js";
@@ -8,7 +8,7 @@ import Landing from "./components/landing/Landing.js";
 import Register from "./components/auth/Register.js";
 import Login from "./components/auth/Login.js";
 import Dashboard from "./components/dashboard/Dashboard.js";
-import Trip from "./components/trip/Trip.js";
+import NewTrip from "./components/trip/NewTrip.js";
 import Person from "./components/person/Person.js";
 // STYLE IMPORTS
 import "./App.css";
@@ -26,14 +26,14 @@ function App(props) {
   }, []);
   return (
     <div className="App">
-      <switch>
+      <Switch>
         <Route exact path="/" component={Landing} />
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
         <PrivateRoute exact path="/dashboard" component={Dashboard} />
-        <PrivateRoute path="/newTrip" component={Trip} />
+        <PrivateRoute path="/newTrip" component={NewTrip} />
         <PrivateRoute path="/person" component={Person} />
-      </switch>
+      </Switch>
     </div>
   );
 }
