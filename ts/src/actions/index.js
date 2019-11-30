@@ -84,6 +84,7 @@ export const postExpense = (info, props) => {
       .then(res => {
         localStorage.setItem("person", res.data.name);
         dispatch({ type: type.CREATE_EXPENSE_SUCCESS, payload: res.data });
+        props.history.push("/trip");
       })
       .catch(error => {
         dispatch({

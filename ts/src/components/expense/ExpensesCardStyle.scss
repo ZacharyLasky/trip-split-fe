@@ -1,0 +1,9 @@
+//SCSS VARIABLES
+@import "src/utilities/variables";
+
+.card {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid black;
+  border-radius: 3px;
+}

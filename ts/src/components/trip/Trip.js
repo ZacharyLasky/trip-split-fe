@@ -5,6 +5,7 @@ import { axiosWithAuth } from "../../utilities/axiosWithAuth.js";
 
 import TripHeader from "../header/TripHeader.js";
 import DashboardCard from "../dashboard/DashboardCard.js";
+import Expenses from "../expense/Expenses.js";
 
 //STYLE IMPORTS
 import TripStyle from "./TripStyle.scss";
@@ -41,19 +42,16 @@ export default function Trip(props) {
               </h1>
             );
           })}
-          <button>ADD EXPENSE</button>
+          <button onClick={() => props.history.push("/expense")}>
+            ADD EXPENSE
+          </button>
         </div>
         <div className="expenses">
           <h1>EXPENSES</h1>
           <img src={arrow} />
         </div>
         <div className="items">
-          <h1>expense1</h1>
-          <h1>expense1</h1>
-          <h1>expense1</h1>
-          <h1>expense1</h1>
-          <h1>expense1</h1>
-          <h1>expense1</h1>
+          <Expenses />
         </div>
       </div>
     </>
