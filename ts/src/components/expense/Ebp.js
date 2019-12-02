@@ -1,18 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { withRouter } from "react-router";
 import { axiosWithAuth } from "../../utilities/axiosWithAuth.js";
-
-import ExpensesCard from "./ExpensesCard.js";
-
-export default function Trip(props) {
-  //TRIP DATA LOCAL STORAGE
+import PersonCard from "../person/PersonCard.js";
+import EbpCard from "./EbpCard.js";
+function Epb() {
   const [data, setData] = useState([]);
-
-  //GET LAST TRIP OF CURRENT USER
+  //GET ALL USERS ON CURRENT TRIP
   useEffect(() => {
     const tripId = localStorage.getItem("tripId");
     axiosWithAuth()
-      .get(`/api/expense/trip/${tripId}`)
+      .get(`/api/person/trip/${tripId}`)
       .then(res => {
         console.log(res.data);
         setData(res.data);
@@ -24,11 +20,11 @@ export default function Trip(props) {
 
   return (
     <>
-      <div className="expenses">
-        {data.map(expenses => {
+      <div className="persons">
+        {data.map(person => {
           return (
             <h1>
-              <ExpensesCard expenses={expenses} />
+              <EbpCard person={person} />
             </h1>
           );
         })}
@@ -36,3 +32,5 @@ export default function Trip(props) {
     </>
   );
 }
+
+export default Epb;

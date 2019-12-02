@@ -12,6 +12,7 @@ import NewTrip from "./components/trip/NewTrip.js";
 import Person from "./components/person/Person.js";
 import Trip from "./components/trip/Trip.js";
 import Expense from "./components/expense/Expense.js";
+import Ebp from "./components/expense/Ebp.js";
 // STYLE IMPORTS
 import "./App.css";
 
@@ -37,6 +38,7 @@ function App(props) {
         <PrivateRoute path="/person" component={Person} />
         <PrivateRoute path="/trip" component={Trip} />
         <PrivateRoute path="/expense" component={Expense} />
+        <PrivateRoute path="/ebp" component={Ebp} />
       </Switch>
     </div>
   );

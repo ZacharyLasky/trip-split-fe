@@ -82,13 +82,31 @@ export const postExpense = (info, props) => {
     axiosWithAuth()
       .post("/api/expense", info)
       .then(res => {
+        localStorage.setItem("expenseId", res.data.id);
         localStorage.setItem("person", res.data.name);
         dispatch({ type: type.CREATE_EXPENSE_SUCCESS, payload: res.data });
-        props.history.push("/trip");
+        props.history.push("/ebp");
       })
       .catch(error => {
         dispatch({
           type: type.CREATE_EXPENSE_FAILURE,
+          payload: error.response
+        });
+      });
+  };
+};
+
+export const updateEbp = (info, props) => {
+  return dispatch => {
+    dispatch({ type: type.UPDATE_EBP_REQUEST });
+    axiosWithAuth()
+      .put("/api/ebp", info)
+      .then(res => {
+        dispatch({ type: type.UPDATE_EBP_SUCCESS, payload: res.data });
+      })
+      .catch(error => {
+        dispatch({
+          type: type.UPDATE_EBP_FAILURE,
           payload: error.response
         });
       });
